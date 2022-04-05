@@ -3,8 +3,8 @@
     "background_color": "#FFFFFF",
     "display": "fullscreen",
     "start_url": "/",
-    "name": "Qard",
-    "short_name": "Qard",
+    "name": "Vbizz",
+    "short_name": "Vbizz",
     "description": "QR code card",
     "icons": [
         {
