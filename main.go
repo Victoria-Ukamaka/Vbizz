@@ -50,7 +50,7 @@ func main() {
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-	log.Println("Starting Qard server at", srv.Addr)
+	log.Println("Starting Vbizz server at", srv.Addr)
 	log.Fatal(srv.ListenAndServe())
 }
 
