@@ -16,35 +16,35 @@
         <div class="container">
             <h3 class="grey-text text-darken-2">
                 <img src="/static/img/icon-192x192.png" width="60px" alt="logo" class="right"/>    
-                Qard
+                Vbizz
             </h3>
             
             <div id="intro" class="flow-text" style="padding-top: 1em; padding-bottom: 2em;">
                 <p>
-                    Qard is a simple QR Code business card generator. Anyone can store your 
-                    particulars in their contacts list by scanning your Qard. 
+                    Vbizz is a simple QR Code business card generator. Anyone can store your 
+                    particulars in their contacts list by scanning your Vbizz. 
                 </p>
                 <p>
-                    Note that Qard does not store any of your particulars.
+                    Note that Vbizz does not store any of your particulars.
                 </p>
             </div>
-            <div class="row center hide" id="qard-container">
-                <img id="qard" class="responsive-img" src="" alt="qrcode"/>                
+            <div class="row center hide" id="Vbizz-container">
+                <img id="Vbizz" class="responsive-img" src="" alt="qrcode"/>                
             </div>            
             <div id="buttons" class="row center">                
-                <a class="btn grey darken-2" onclick="makeForm();">Make my Qard</a>
-                <a class="btn grey lighten-1 hide" id="clear-btn" onclick="clearQard();">Clear</a>
+                <a class="btn grey darken-2" onclick="makeForm();">Make my Vbizz</a>
+                <a class="btn grey lighten-1 hide" id="clear-btn" onclick="clearVbizz();">Clear</a>
             </div>
         </div>        
         <script src="/static/js/jquery-3.5.1.min.js"></script>
         <script src="/static/js/materialize.min.js"></script>
         <script>
             $(document).ready(function(){
-                if (localStorage.getItem("qardb64") != null) {
-                    $('#qard-container').removeClass("hide");
+                if (localStorage.getItem("vbizzb64") != null) {
+                    $('#vbizz-container').removeClass("hide");
                     $('#clear-btn').removeClass("hide");
                     $('#intro').addClass("hide");
-                    $('#qard').attr("src", "data:image/png;base64," + localStorage.getItem("qardb64"));
+                    $('#vbizz').attr("src", "data:image/png;base64," + localStorage.getItem("vbizzb64"));
                 }
                 if (navigator.onLine) {
                     $('#buttons').removeClass("hide");
@@ -53,9 +53,9 @@
                 }
             });
 
-            function clearQard() {
-                localStorage.removeItem("qardb64");
-                $('#qard-container').addClass("hide");
+            function clearVbizz() {
+                localStorage.removeItem("vbizzb64");
+                $('#vbizz-container').addClass("hide");
                 $('#clear-btn').addClass("hide");
                 $('#intro').removeClass("hide");
             }
