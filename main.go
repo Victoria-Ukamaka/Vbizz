@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"encoding/base64"
+	"fmt"
 	"html/template"
 	"image"
 	"io"
@@ -20,7 +21,7 @@ import (
 	"github.com/emersion/go-vcard"
 	"github.com/gorilla/mux"
 	"github.com/nfnt/resize"
-	"github.com/sausheong/go-qrcode"
+	"github.com/yeqown/go-qrcode"
 )
 
 var dir string
@@ -44,9 +45,15 @@ func main() {
 
 	r.PathPrefix("/static").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir(dir+"/static"))))
 
+	var port string = os.Getenv("PORT")
+
+	if port == "" {
+		port = "9000"
+	}
+
 	srv := &http.Server{
 		Handler:      r,
-		Addr:         "0.0.0.0:9000",
+		Addr:         fmt.Sprintf("0.0.0.0:%s", port),
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
